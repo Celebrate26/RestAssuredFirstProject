@@ -76,17 +76,15 @@ SnakeYAML lets your Java code understand .yml or .yaml files.-->
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -95,13 +93,11 @@ SnakeYAML lets your Java code understand .yml or .yaml files.-->
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <!-- Keep your parallel settings here -->
                     <parallel>methods</parallel>
                     <threadCount>2</threadCount>
-                    <useFile>false</useFile>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
