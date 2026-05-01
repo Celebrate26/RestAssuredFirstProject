@@ -33,6 +33,7 @@ jobs:
         run: mvn clean install -DskipTests -q
 
       - name: Run TestNG suites (testng.xml)
+        timeout-minutes: 15
         run: mvn -U test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
 
       - name: Show generated folders
