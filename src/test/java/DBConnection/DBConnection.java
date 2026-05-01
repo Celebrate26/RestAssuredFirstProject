@@ -17,7 +17,7 @@ public class DBConnection {
         try (Connection connection = DriverManager.getConnection(dbURL, dbUsername, dbPassword)) {
 
             try (Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery("SELECT * FROM loginUser WHERE id = 7")) {
+                 ResultSet resultSet = statement.executeQuery("SELECT * FROM loginUser WHERE id = 6")) {
 
                 while (resultSet.next()) {
                     getEmail = resultSet.getString("email");
