@@ -19,8 +19,13 @@ public class UserRegistration {
     static String adminToken;
 
     @BeforeClass
-    public void setup() throws SQLException {
-        DBConnection.dbConnection();
+    public void setup() {
+        try {
+            DBConnection.dbConnection();
+        } catch (Exception e) {
+            System.err.println("DATABASE CONNECTION FAILED: " + e.getMessage());
+            throw new RuntimeException("Stopping tests: Database unreachable.");
+        }
     }
 
     @Test(priority = 1)

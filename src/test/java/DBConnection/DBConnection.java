@@ -13,6 +13,7 @@ public class DBConnection {
         String dbUsername = "ndosian6b8b7_teaching";
         String dbPassword = "^{SF0a=#~[~p)@l1";
 
+        DriverManager.setLoginTimeout(5);
 
         try (Connection connection = DriverManager.getConnection(dbURL, dbUsername, dbPassword)) {
 
